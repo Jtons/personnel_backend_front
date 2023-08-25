@@ -1,0 +1,18 @@
+<configuration>
+    <!-- 追加器
+     name:一个随意的名字
+     class:不同的实现类会输出到不同的地方-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- 输出格式 -->
+            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 控制更细粒度的日志级别，可以根据包/根据类 -->
+    <logger name="com.testcreated.demo.mapper" level="trace"></logger>
+    <!-- 控制所有的日志级别 -->
+    <root level="info">
+        <!-- 将当前的输出日志输出到哪个（STDOUT）追加器上 -->
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
